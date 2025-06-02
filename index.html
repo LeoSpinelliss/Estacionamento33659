@@ -1,55 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gerenciamento de Estacionamento</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>API Estacionamento</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <div class="container">
     <h1>Controle de Estacionamento</h1>
-  </header>
 
-  <main>
-    <section id="form-section">
-      <h2>Registrar Entrada</h2>
-      <form id="entry-form">
-        <label for="plate">Placa do Veículo:</label>
-        <input type="text" id="plate" name="plate" required>
-        <button type="submit">Registrar Entrada</button>
-      </form>
-    </section>
+    <input type="text" id="plateInput" placeholder="Digite a placa do veículo" />
 
-    <section id="exit-section">
-      <h2>Registrar Saída</h2>
-      <form id="exit-form">
-        <label for="exit-plate">Placa do Veículo:</label>
-        <input type="text" id="exit-plate" name="exit-plate" required>
-        <button type="submit">Registrar Saída</button>
-      </form>
-    </section>
+    <div class="btn-group">
+      <button onclick="listarAtivos()">Listar Veículos Ativos</button>
+      <button onclick="registrarEntrada()">Registrar Entrada</button>
+      <button onclick="registrarSaida()">Registrar Saída</button>
+      <button onclick="verificarVeiculo()">Verificar Veículo</button>
+      <button onclick="cancelarRegistro()">Cancelar Registro</button>
+      <button onclick="atualizarDados()">Atualizar Dados</button>
+      <button onclick="gerarRelatorio()">Relatório Diário</button>
+      <button onclick="verificarVagas()">Verificar Vagas</button>
+      <button onclick="tempoPermanencia()">Tempo de Permanência</button>
+    </div>
 
-    <section id="status">
-      <p id="status-message"></p>
-    </section>
-
-    <section id="vehicle-list">
-      <h2>Veículos Estacionados</h2>
-      <table id="vehicle-table">
-        <thead>
-          <tr>
-            <th>Placa</th>
-            <th>Entrada</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Dados serão inseridos aqui dinamicamente -->
-        </tbody>
-      </table>
-    </section>
-  </main>
+    <div id="resultado"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
