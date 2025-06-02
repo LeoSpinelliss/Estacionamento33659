@@ -1,4 +1,4 @@
-const API = "http://cnms-parking-api.net.uztec.com.br/";
+const API = "http://cnms-parking-api.net.uztec.com.br/api/v1";
 const output = document.getElementById("resultado");
 
 function pegarPlaca() {
